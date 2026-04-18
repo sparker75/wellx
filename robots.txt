@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Individual pages emit X-Robots-Tag: noindex via vercel.json.
+# We allow crawling so bots can fetch, see the header, and drop the page from their index.
