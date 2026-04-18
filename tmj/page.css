@@ -1,0 +1,195 @@
+/* ============================================================
+   TMJ landing page — page-specific styles
+   Layered on top of ../brand.css
+   ============================================================ */
+
+/* Shared brand logo path, resolved from this page's location. */
+:root {
+  --brand-logo-url: url("../assets/athletes_choice_rgb-3-copy.webp");
+}
+
+/* ------------------ Anatomy / Muscle cards ------------------ */
+.muscles {
+  display: grid;
+  gap: var(--s-5);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 720px) {
+  .muscles {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.muscle {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+  padding: var(--s-6) var(--s-5);
+  background: var(--paper-tint);
+  border: 1px solid var(--paper-deep);
+  border-radius: var(--r-lg);
+  position: relative;
+  transition: transform var(--dur-2) var(--ease-out-q),
+    box-shadow var(--dur-2) var(--ease-out-q);
+}
+
+.muscle:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-2);
+}
+
+.muscle-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--ink);
+  background: var(--yellow);
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  letter-spacing: -0.01em;
+}
+
+.muscle-name {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.5rem;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+
+.muscle-desc {
+  font-size: 15.5px;
+  color: var(--ink-80);
+  line-height: 1.6;
+}
+
+.muscle-signs {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: auto;
+  padding-top: var(--s-4);
+  border-top: 1px solid var(--paper-deep);
+}
+
+.muscle-signs li {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--flint);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.01em;
+}
+
+.muscle-signs li::before {
+  content: "";
+  flex: none;
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--yellow);
+}
+
+/* ------------------ Gray's Anatomy plate frame ------------------ */
+.plate {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+  max-width: 480px;
+  width: 100%;
+}
+
+.plate-frame {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--s-3);
+}
+
+.plate-frame::before,
+.plate-frame::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid var(--ink);
+  pointer-events: none;
+}
+
+.plate-frame::before {
+  top: 0;
+  left: 0;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.plate-frame::after {
+  bottom: 0;
+  right: 0;
+  border-left: 0;
+  border-top: 0;
+}
+
+.plate img {
+  width: 100%;
+  height: auto;
+  mix-blend-mode: multiply;
+  filter: contrast(1.04);
+  animation: platefadein 1.2s var(--ease-out-q) both;
+}
+
+@keyframes platefadein {
+  from {
+    opacity: 0;
+    transform: scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .plate img {
+    animation: none;
+  }
+}
+
+.plate-caption {
+  font-size: 11.5px;
+  line-height: 1.55;
+  font-style: italic;
+  color: var(--flint);
+  letter-spacing: 0.005em;
+  max-width: 42ch;
+  align-self: flex-start;
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--paper-deep);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+}
+
+.plate-num {
+  font-family: var(--display);
+  font-style: normal;
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: var(--yellow);
+  padding: 2px 7px;
+  border-radius: 3px;
+  line-height: 1.4;
+}
