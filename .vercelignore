@@ -1,0 +1,12 @@
+# Internal documentation — stays in the repo, excluded from production deploy.
+CLAUDE.md
+.impeccable.md
+RESULTS.md
+ACM Brand Book.pdf
+*.pdf
+
+# Template skeleton and block catalogue — authoring references, not public.
+template/
+
+# Claude Code project settings (permission rules).
+.claude/
