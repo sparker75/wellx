@@ -81,6 +81,10 @@ Full aesthetic direction, principles, and don'ts live in `.impeccable.md`. The o
 
 Static site deployed on Vercel from this directory. Plain HTML/CSS/JS — no build step.
 
+## Day-to-day runbook
+
+**`PLAYBOOK.md` is the canonical how-to** for creating new variants, iterating on them, verifying tracking, and retiring losers. Read it first when the task is "spin up a new landing page" or "test a new hero angle." This file (`CLAUDE.md`) covers brand + project structure; `PLAYBOOK.md` covers process.
+
 ## Project structure
 
 ```
