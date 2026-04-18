@@ -1,0 +1,104 @@
+/* ============================================================
+   Shoulder landing page — page-specific styles
+   Layered on top of ../brand.css
+   ============================================================ */
+
+:root {
+  --brand-logo-url: url("../assets/athletes_choice_rgb-3-copy.webp");
+}
+
+/* ------------------ Gray's Anatomy plate frame ------------------ */
+.plate {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+  max-width: 480px;
+  width: 100%;
+}
+
+.plate-frame {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--s-3);
+}
+
+.plate-frame::before,
+.plate-frame::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid var(--ink);
+  pointer-events: none;
+}
+
+.plate-frame::before {
+  top: 0;
+  left: 0;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.plate-frame::after {
+  bottom: 0;
+  right: 0;
+  border-left: 0;
+  border-top: 0;
+}
+
+.plate img {
+  width: 100%;
+  height: auto;
+  mix-blend-mode: multiply;
+  filter: contrast(1.04);
+  animation: platefadein 1.2s var(--ease-out-q) both;
+}
+
+@keyframes platefadein {
+  from {
+    opacity: 0;
+    transform: scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .plate img {
+    animation: none;
+  }
+}
+
+.plate-caption {
+  font-size: 11.5px;
+  line-height: 1.55;
+  font-style: italic;
+  color: var(--flint);
+  letter-spacing: 0.005em;
+  max-width: 42ch;
+  align-self: flex-start;
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--paper-deep);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+}
+
+.plate-num {
+  font-family: var(--display);
+  font-style: normal;
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: var(--yellow);
+  padding: 2px 7px;
+  border-radius: 3px;
+  line-height: 1.4;
+}
